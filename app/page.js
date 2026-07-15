@@ -7,41 +7,46 @@ export default function Home() {
   return (
     <>
       <section className="pt-16 pb-10">
-        <div className="flex items-start gap-6">
-          <div className="avatar-ring w-32 h-32 sm:w-36 sm:h-36 shrink-0">
-            <div className="avatar-inner flex items-center justify-center">
-              <span className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>
+        <div className="flex flex-col md:flex-row gap-8 items-stretch">
+          <div className="photo-frame w-full md:w-2/5 aspect-[4/5] md:aspect-auto shrink-0">
+            {/* swap this block for a real <img src="..." alt={siteConfig.name} /> */}
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="text-3xl font-semibold" style={{ color: "var(--accent)" }}>
                 RS
               </span>
             </div>
           </div>
-          <div>
-            <h1 className="text-4xl sm:text-5xl font-semibold" style={{ color: "var(--text)" }}>
-              {siteConfig.name}
-            </h1>
-            <p className="font-mono text-base mt-1" style={{ color: "var(--text-muted)" }}>
-              {siteConfig.role}
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="font-mono text-base inline-flex items-center gap-1 mt-1"
-              style={{ color: "var(--text-faint)" }}
-            >
-              {siteConfig.email}
-            </a>
+
+          <div className="flex-1 flex flex-col justify-between">
+            <div>
+              <h1 className="text-4xl sm:text-5xl font-semibold" style={{ color: "var(--text)" }}>
+                {siteConfig.name}
+              </h1>
+              <p className="font-mono text-base mt-1" style={{ color: "var(--text-muted)" }}>
+                {siteConfig.role}
+              </p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="font-mono text-base inline-flex items-center gap-1 mt-1"
+                style={{ color: "var(--text-faint)" }}
+              >
+                {siteConfig.email}
+              </a>
+
+              <p className="mt-6 max-w-lg text-lg" style={{ color: "var(--text-muted)" }}>
+                {siteConfig.tagline}
+              </p>
+            </div>
+
+            <div>
+              <div className="mt-6">
+                <CommitTicker />
+              </div>
+              <div className="mt-6">
+                <SocialIcons />
+              </div>
+            </div>
           </div>
-        </div>
-
-        <p className="mt-6 max-w-lg text-lg" style={{ color: "var(--text-muted)" }}>
-          {siteConfig.tagline}
-        </p>
-
-        <div className="mt-5">
-          <CommitTicker />
-        </div>
-
-        <div className="mt-6">
-          <SocialIcons />
         </div>
       </section>
 

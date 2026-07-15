@@ -1,6 +1,16 @@
 import Link from "next/link";
 import SocialIcons from "./SocialIcons";
 
+const footerLinks = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
+  { href: "/blog", label: "Blog" },
+  { href: "/resume", label: "Resume" },
+  { href: "/bookshelf", label: "Bookshelf" },
+  { href: "/papers", label: "Paper Shelf" },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -9,21 +19,18 @@ export default function Footer() {
       className="relative z-10 border-t mt-10"
       style={{ borderColor: "var(--border)", background: "var(--surface)" }}
     >
-      <div className="max-w-3xl mx-auto px-6 py-10 grid grid-cols-2 gap-8">
-        <div>
-          <p className="eyebrow mb-3">navigate</p>
-          <ul className="space-y-2 text-base" style={{ color: "var(--text-muted)" }}>
-            <li><Link href="/" className="nav-link">Home</Link></li>
-            <li><Link href="/projects" className="nav-link">Projects</Link></li>
-            <li><Link href="/experience" className="nav-link">Experience</Link></li>
-            <li><Link href="/blog" className="nav-link">Blog</Link></li>
-            <li><Link href="/resume" className="nav-link">Resume</Link></li>
-          </ul>
-        </div>
-        <div>
-          <p className="eyebrow mb-3">connect</p>
-          <SocialIcons />
-        </div>
+      <div className="max-w-3xl mx-auto px-6 py-10">
+        <p className="eyebrow mb-3">navigate</p>
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-base mb-8" style={{ color: "var(--text-muted)" }}>
+          {footerLinks.map((l) => (
+            <Link key={l.href} href={l.href} className="nav-link">
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        <p className="eyebrow mb-3">connect</p>
+        <SocialIcons />
       </div>
       <div
         className="border-t max-w-3xl mx-auto px-6 py-5 text-sm font-mono"
@@ -34,3 +41,4 @@ export default function Footer() {
     </footer>
   );
 }
+

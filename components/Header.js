@@ -7,6 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Experience" },
   { href: "/blog", label: "Blog" },
   { href: "/resume", label: "Resume" },
 ];
@@ -16,8 +17,8 @@ export default function Header() {
 
   return (
     <header
-      className="relative z-10 border-b"
-      style={{ borderColor: "var(--border)" }}
+      className="sticky top-0 z-30 border-b backdrop-blur-md"
+      style={{ borderColor: "var(--border)", background: "var(--header-bg)" }}
     >
       <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
         <nav className="hidden sm:flex items-center gap-6 text-base">
