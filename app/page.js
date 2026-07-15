@@ -9,12 +9,7 @@ export default function Home() {
       <section className="pt-16 pb-10">
         <div className="flex flex-col md:flex-row gap-8 items-stretch">
           <div className="photo-frame w-full md:w-2/5 aspect-[4/5] md:aspect-auto shrink-0">
-            {/* swap this block for a real <img src="..." alt={siteConfig.name} /> */}
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="text-3xl font-semibold" style={{ color: "var(--accent)" }}>
-                RS
-              </span>
-            </div>
+            <img src="/photo.png" alt={siteConfig.name} />
           </div>
 
           <div className="flex-1 flex flex-col justify-between">

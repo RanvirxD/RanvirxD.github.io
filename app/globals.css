@@ -211,9 +211,151 @@ body {
   border-radius: 999px;
 }
 
+.print-only {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .commit-ticker .dot,
   .commit-ticker .cursor {
     animation: none;
+  }
+}
+
+/* resume box-net - only rendered when printing */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0.35in;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+
+  header,
+  footer {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .box-net {
+    position: relative;
+    width: 7.55in;
+    height: 5.4in;
+    font-family: "Hanken Grotesk", sans-serif;
+    color: #000;
+  }
+
+  .box-net .face {
+    position: absolute;
+    width: 1.8in;
+    height: 1.8in;
+    border: 1px solid #000;
+    padding: 0.14in;
+    font-size: 6.3pt;
+    line-height: 1.35;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .box-net .face p {
+    margin: 0 0 0.05in 0;
+  }
+
+  .box-net .face-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 6pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000;
+    border-bottom: 0.5pt solid #000;
+    padding-bottom: 0.04in;
+    margin-bottom: 0.08in !important;
+  }
+
+  .box-net .front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .box-net .front .big-name {
+    font-size: 11pt;
+    font-weight: 700;
+    margin-bottom: 0.05in !important;
+  }
+
+  .box-net .front .sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 6.5pt;
+    color: #333;
+  }
+
+  .box-net .front .contact {
+    font-size: 6pt;
+    color: #333;
+  }
+
+  .box-net .top { left: 1.8in; top: 0; }
+  .box-net .left { left: 0; top: 1.8in; }
+  .box-net .front { left: 1.8in; top: 1.8in; }
+  .box-net .right { left: 3.6in; top: 1.8in; }
+  .box-net .back { left: 5.4in; top: 1.8in; }
+  .box-net .bottom { left: 1.8in; top: 3.6in; }
+
+  /* fold lines - dashed instead of solid where an edge meets another face */
+  .box-net .top { border-bottom-style: dashed; }
+  .box-net .left { border-right-style: dashed; }
+  .box-net .front { border-style: dashed; }
+  .box-net .right { border-left-style: dashed; border-right-style: dashed; }
+  .box-net .back { border-left-style: dashed; }
+  .box-net .bottom { border-top-style: dashed; }
+
+  /* glue tabs */
+  .box-net .tab {
+    position: absolute;
+    border: 1px dashed #000;
+    background: repeating-linear-gradient(45deg, #fff, #fff 3px, #f2f2f2 3px, #f2f2f2 6px);
+  }
+
+  .box-net .tab::after {
+    content: "glue";
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 5pt;
+    color: #666;
+    text-align: center;
+    writing-mode: vertical-rl;
+    height: 100%;
+  }
+
+  .box-net .tab-back-right {
+    left: 7.2in;
+    top: 1.8in;
+    width: 0.35in;
+    height: 1.8in;
+  }
+
+  .box-net .tab-top {
+    left: 1.4in;
+    top: 0;
+    width: 0.4in;
+    height: 1.8in;
+  }
+
+  .box-net .tab-bottom {
+    left: 3.6in;
+    top: 3.6in;
+    width: 0.4in;
+    height: 1.8in;
   }
 }
