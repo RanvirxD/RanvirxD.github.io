@@ -3,8 +3,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Ranvir Singh — Engineer & Developer",
+  title: "Ranvir Singh - Portfolio",
   description: "Ranvir Singh — engineer and developer. Projects, experience, and writing.",
+  icons: {
+    icon: "/photo.png",
+    shortcut: "/photo.png",
+    apple: "/photo.png",
+  },
 };
 
 // runs before paint so there's no light/dark flash on load
@@ -17,7 +22,7 @@ const themeInit = `
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -305,6 +305,25 @@ body {
     color: #333;
   }
 
+  .box-net .qr-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box-net .qr-img {
+    width: 1.1in;
+    height: 1.1in;
+    margin: 0.06in 0;
+  }
+
+  .box-net .qr-url {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 5.5pt;
+    color: #333;
+    text-align: center;
+  }
+
   .box-net .top { left: 1.8in; top: 0; }
   .box-net .left { left: 0; top: 1.8in; }
   .box-net .front { left: 1.8in; top: 1.8in; }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import CommitTicker from "@/components/CommitTicker";
 import SocialIcons from "@/components/SocialIcons";
 import { siteConfig } from "@/lib/config";

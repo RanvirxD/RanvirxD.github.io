@@ -138,11 +138,10 @@ export default function ResumePage() {
           <p className="contact">{siteConfig.location}</p>
         </div>
 
-        <div className="face right">
-          <p className="face-label">projects</p>
-          {projects.map((p) => (
-            <p key={p.name}><b>{p.name}</b></p>
-          ))}
+        <div className="face right qr-face">
+          <p className="face-label">scan me</p>
+          <img src="/qr.svg" alt="QR code to ranvirxd.github.io" className="qr-img" />
+          <p className="qr-url">ranvirxd.github.io</p>
         </div>
 
         <div className="face back">
