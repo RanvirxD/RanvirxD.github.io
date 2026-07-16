@@ -11,7 +11,7 @@ export default function PapersPage() {
         Papers and long-form technical writing worth revisiting.
       </p>
 
-      <div className="mt-10 space-y-4">
+      <div className="mt-10">
         {papers.map((paper) => {
           const Wrapper = paper.link ? "a" : "div";
           const wrapperProps = paper.link
@@ -19,14 +19,12 @@ export default function PapersPage() {
             : {};
 
           return (
-            <Wrapper key={paper.title} {...wrapperProps} className="card p-6 block">
-              <h2 className="font-semibold text-lg" style={{ color: "var(--text)" }}>
-                {paper.title}
-              </h2>
+            <Wrapper key={paper.title} {...wrapperProps} className="flow-row">
+              <p className="text-lg font-semibold" style={{ color: "var(--text)" }}>{paper.title}</p>
               <p className="font-mono text-sm mt-0.5" style={{ color: "var(--text-faint)" }}>
                 {paper.source}
               </p>
-              <p className="mt-2 text-sm" style={{ color: "var(--text-muted)" }}>
+              <p className="mt-1 text-base" style={{ color: "var(--text-muted)" }}>
                 {paper.note}
               </p>
             </Wrapper>

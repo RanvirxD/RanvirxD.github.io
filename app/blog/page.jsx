@@ -23,20 +23,16 @@ export default function BlogPage() {
         learning as I go.
       </p>
 
-      <div className="mt-10 space-y-4">
+      <div className="mt-10">
         {sorted.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="card p-6 sm:p-7 block"
-          >
+          <Link key={post.slug} href={`/blog/${post.slug}`} className="flow-row">
             <p className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>
               {formatDate(post.date)}
             </p>
-            <h2 className="text-xl font-semibold mt-1" style={{ color: "var(--text)" }}>
+            <p className="text-xl font-semibold mt-0.5" style={{ color: "var(--text)" }}>
               {post.title}
-            </h2>
-            <p className="mt-2 text-base" style={{ color: "var(--text-muted)" }}>
+            </p>
+            <p className="mt-1 text-base" style={{ color: "var(--text-muted)" }}>
               {post.excerpt}
             </p>
           </Link>

@@ -14,37 +14,33 @@ export default function ResumePage() {
     <div className="pt-14 pb-20">
       {/* screen view */}
       <div className="screen-only">
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <div>
-            <p className="eyebrow">// resume</p>
-            <h1 className="text-3xl font-semibold mt-1" style={{ color: "var(--text)" }}>
-              {siteConfig.name}
-            </h1>
-            <p className="font-mono text-base mt-1" style={{ color: "var(--text-muted)" }}>
-              {siteConfig.role} · {siteConfig.location}
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <a href="/resume.pdf" download className="btn-outline">
-              download pdf
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" />
-              </svg>
-            </a>
-            <button onClick={() => window.print()} className="btn-outline">
-              print as a box
-            </button>
-          </div>
+        <div>
+          <p className="eyebrow">// resume</p>
+          <h1 className="text-3xl font-semibold mt-1" style={{ color: "var(--text)" }}>
+            {siteConfig.name}
+          </h1>
+          <p className="font-mono text-base mt-1" style={{ color: "var(--text-muted)" }}>
+            {siteConfig.role} · {siteConfig.location}
+          </p>
         </div>
 
-        <p className="mt-3 text-sm max-w-md" style={{ color: "var(--text-faint)" }}>
+        <div className="flex justify-center gap-2 mt-6">
+          <a href="/resume.pdf" download className="btn-outline">
+            download pdf
+          </a>
+          <button onClick={() => window.print()} className="btn-outline">
+            print as a box
+          </button>
+        </div>
+
+        <p className="mt-3 text-sm text-center" style={{ color: "var(--text-faint)" }}>
           hit &ldquo;print as a box&rdquo; and use your browser&apos;s print dialog (Ctrl/Cmd + P) —
           the printout folds into an actual box.
         </p>
 
-        <section className="section-rule pt-8 mt-8">
+        <div className="mt-12">
           <p className="eyebrow">experience</p>
-          <div className="mt-3 space-y-6">
+          <div className="mt-4 space-y-6">
             {experience.map((job) => (
               <div key={job.company}>
                 <div className="flex justify-between flex-wrap gap-x-4">
@@ -62,11 +58,11 @@ export default function ResumePage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        <section className="section-rule pt-8 mt-8">
+        <div className="mt-10">
           <p className="eyebrow">projects</p>
-          <div className="mt-3 space-y-6">
+          <div className="mt-4 space-y-6">
             {projects.map((proj) => (
               <div key={proj.name}>
                 <p className="font-semibold" style={{ color: "var(--text)" }}>{proj.name}</p>
@@ -75,36 +71,36 @@ export default function ResumePage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        <section className="section-rule pt-8 mt-8">
+        <div className="mt-10">
           <p className="eyebrow">skills</p>
-          <div className="mt-3 space-y-2 text-sm" style={{ color: "var(--text-muted)" }}>
+          <div className="mt-4 space-y-2 text-sm" style={{ color: "var(--text-muted)" }}>
             <p><span className="font-semibold" style={{ color: "var(--text)" }}>Languages: </span>{skills.languages.join(", ")}</p>
             <p><span className="font-semibold" style={{ color: "var(--text)" }}>Backend & Systems: </span>{skills.backend.join(", ")}</p>
             <p><span className="font-semibold" style={{ color: "var(--text)" }}>Cloud & Tools: </span>{skills.cloud.join(", ")}</p>
             <p><span className="font-semibold" style={{ color: "var(--text)" }}>Spoken: </span>{skills.spoken.join(", ")}</p>
           </div>
-        </section>
+        </div>
 
-        <section className="section-rule pt-8 mt-8">
+        <div className="mt-10">
           <p className="eyebrow">education</p>
-          <div className="mt-3 space-y-4">
+          <div className="mt-4 space-y-4">
             {education.map((ed) => (
               <div key={ed.school} className="flex justify-between flex-wrap gap-x-4">
                 <div>
                   <p className="font-semibold" style={{ color: "var(--text)" }}>{ed.school}</p>
-                  <p className="text-sm italic" style={{ color: "var(--text-muted)" }}>{ed.degree} · {ed.detail}</p>
+                  <p className="text-sm italic" style={{ color: "var(--text-muted)" }}>{ed.degree}</p>
                 </div>
                 <p className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>{ed.start} – {ed.end}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        <section className="section-rule pt-8 mt-8 pb-4">
+        <div className="mt-10 pb-4">
           <p className="eyebrow">certification & co-curricular</p>
-          <div className="mt-3 space-y-3">
+          <div className="mt-4 space-y-3">
             {certifications.map((c) => (
               <div key={c.title} className="flex justify-between flex-wrap gap-x-4">
                 <p className="text-sm" style={{ color: "var(--text-muted)" }}>{c.title} — {c.org}</p>
@@ -112,10 +108,10 @@ export default function ResumePage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
       </div>
 
-      {/* print-only box net - cuts and folds into a cube */}
+      {/* print-only box net - cuts and folds into a cube, tab on every free edge */}
       <div className="print-only box-net">
         <div className="face top">
           <p className="face-label">skills</p>
@@ -147,7 +143,7 @@ export default function ResumePage() {
         <div className="face back">
           <p className="face-label">education</p>
           {education.map((ed) => (
-            <p key={ed.school}>{ed.school.split(",")[0]} — {ed.detail}</p>
+            <p key={ed.school}>{ed.school.split(",")[0]} — {ed.degree}</p>
           ))}
           <p className="face-label" style={{ marginTop: "0.3in" }}>connect</p>
           <p>github.com/{siteConfig.githubUsername}</p>
@@ -160,10 +156,14 @@ export default function ResumePage() {
           ))}
         </div>
 
-        {/* glue tabs so the cube actually holds together */}
+        {/* glue tabs - one per free edge, so the box closes on all sides */}
+        <div className="tab tab-top-outer" />
+        <div className="tab tab-top-left" />
+        <div className="tab tab-top-right" />
         <div className="tab tab-back-right" />
-        <div className="tab tab-top" />
-        <div className="tab tab-bottom" />
+        <div className="tab tab-bottom-left" />
+        <div className="tab tab-bottom-right" />
+        <div className="tab tab-bottom-outer" />
       </div>
     </div>
   );

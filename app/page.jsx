@@ -1,7 +1,7 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import CommitTicker from "@/components/CommitTicker";
 import SocialIcons from "@/components/SocialIcons";
-import { siteConfig } from "@/lib/config";
+import { siteConfig, projects } from "@/lib/config";
 
 export default function Home() {
   return (
@@ -45,55 +45,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-rule pt-10 pb-10">
+      {/* every project, one line each - click through to its own page */}
+      <section className="pt-10 pb-6">
         <p className="eyebrow">// projects</p>
-        <h2 className="text-3xl font-semibold mt-1" style={{ color: "var(--text)" }}>
-          Projects
-        </h2>
-        <p className="mt-2 max-w-lg text-lg" style={{ color: "var(--text-muted)" }}>
-          A handful of things I&apos;ve built recently — small tools, experiments,
-          and a couple of products people actually use.
-        </p>
-        <Link href="/projects" className="btn-outline mt-4">
-          view all projects
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </Link>
+        <div className="mt-2">
+          {projects.map((p) => (
+            <Link key={p.slug} href={`/projects/${p.slug}`} className="flow-row">
+              <p className="text-lg font-semibold" style={{ color: "var(--text)" }}>{p.name}</p>
+              <p className="text-base mt-0.5" style={{ color: "var(--text-muted)" }}>{p.summary}</p>
+            </Link>
+          ))}
+        </div>
       </section>
 
-      <section className="section-rule pt-10 pb-10">
+      <section className="pt-6 pb-6">
         <p className="eyebrow">// experience</p>
-        <h2 className="text-3xl font-semibold mt-1" style={{ color: "var(--text)" }}>
-          Experience
-        </h2>
         <p className="mt-2 max-w-lg text-lg" style={{ color: "var(--text-muted)" }}>
           Where I&apos;ve worked and what I worked on — from early internships
           to full-time engineering roles.
         </p>
-        <Link href="/experience" className="btn-outline mt-4">
-          view full experience
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </Link>
+        <div className="flex justify-center mt-4">
+          <Link href="/experience" className="btn-outline">
+            view full experience
+          </Link>
+        </div>
       </section>
 
-      <section className="section-rule pt-10 pb-16">
+      <section className="pt-6 pb-16">
         <p className="eyebrow">// blog</p>
-        <h2 className="text-3xl font-semibold mt-1" style={{ color: "var(--text)" }}>
-          Blog
-        </h2>
         <p className="mt-2 max-w-lg text-lg" style={{ color: "var(--text-muted)" }}>
           Notes on building software, career decisions, and things I&apos;m
           learning as I go.
         </p>
-        <Link href="/blog" className="btn-outline mt-4">
-          read the blog
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </Link>
+        <div className="flex justify-center mt-4">
+          <Link href="/blog" className="btn-outline">
+            read the blog
+          </Link>
+        </div>
       </section>
     </>
   );
