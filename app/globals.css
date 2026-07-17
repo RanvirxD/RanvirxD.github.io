@@ -279,6 +279,9 @@ h1, h2, h3, .font-display {
     margin: 0 auto;
     font-family: "Hanken Grotesk", sans-serif;
     color: #000;
+    transform-origin: top center;
+    transform: scale(0.9);
+    /* scaled to 80% so the printed box-net fits on the page */
   }
 
   .box-net .face {
