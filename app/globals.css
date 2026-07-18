@@ -46,6 +46,26 @@ body {
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   transition: background 0.2s ease, color 0.2s ease;
+  position: relative;
+}
+
+/* faint dot-grid, computer/schematic feel, sits behind all content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 90%);
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3, .font-display {
@@ -113,7 +133,7 @@ h1, h2, h3, .font-display {
 .nav-link {
   position: relative;
   color: var(--text-muted);
-  transition: color 0.2s ease;
+  transition: color 0.3s cubic-bezier(0.16,1,0.3,1);
 }
 
 .nav-link:hover {
@@ -128,7 +148,7 @@ h1, h2, h3, .font-display {
   width: 0;
   height: 1px;
   background: var(--text-muted);
-  transition: width 0.2s ease;
+  transition: width 0.35s cubic-bezier(0.16,1,0.3,1);
 }
 
 .nav-link:hover::after {
@@ -139,7 +159,7 @@ h1, h2, h3, .font-display {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 1.5rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.3s cubic-bezier(0.16,1,0.3,1);
 }
 
 .card:hover {
@@ -179,7 +199,7 @@ h1, h2, h3, .font-display {
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.6rem 1.3rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s cubic-bezier(0.16,1,0.3,1);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -199,7 +219,7 @@ h1, h2, h3, .font-display {
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--text-muted);
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: color 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s cubic-bezier(0.16,1,0.3,1);
 }
 
 .icon-btn:hover {
@@ -274,41 +294,38 @@ h1, h2, h3, .font-display {
 
   .box-net {
     position: relative;
-    width: 9.6in;
-    height: 7.7in;
+    width: 7.68in;
+    height: 6.16in;
     margin: 0 auto;
     font-family: "Hanken Grotesk", sans-serif;
     color: #000;
-    transform-origin: top center;
-    transform: scale(0.9);
-    /* scaled to 80% so the printed box-net fits on the page */
   }
 
   .box-net .face {
     position: absolute;
-    width: 2.3in;
-    height: 2.3in;
+    width: 1.84in;
+    height: 1.84in;
     border: 1px solid #000;
-    padding: 0.18in;
-    font-size: 7.6pt;
+    padding: 0.14in;
+    font-size: 6.1pt;
     line-height: 1.4;
     overflow: hidden;
     box-sizing: border-box;
   }
 
   .box-net .face p {
-    margin: 0 0 0.06in 0;
+    margin: 0 0 0.05in 0;
   }
 
   .box-net .face-label {
     font-family: "JetBrains Mono", monospace;
-    font-size: 7pt;
+    font-size: 5.6pt;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #000;
     border-bottom: 0.5pt solid #000;
-    padding-bottom: 0.05in;
-    margin-bottom: 0.1in !important;
+    padding-bottom: 0.04in;
+    margin-bottom: 0.08in !important;
   }
 
   .box-net .front {
@@ -319,19 +336,19 @@ h1, h2, h3, .font-display {
   }
 
   .box-net .front .big-name {
-    font-size: 13pt;
+    font-size: 10.4pt;
     font-weight: 700;
-    margin-bottom: 0.06in !important;
+    margin-bottom: 0.05in !important;
   }
 
   .box-net .front .sub {
     font-family: "JetBrains Mono", monospace;
-    font-size: 7.5pt;
+    font-size: 6pt;
     color: #333;
   }
 
   .box-net .front .contact {
-    font-size: 7pt;
+    font-size: 5.6pt;
     color: #333;
   }
 
@@ -342,25 +359,25 @@ h1, h2, h3, .font-display {
   }
 
   .box-net .qr-img {
-    width: 1.4in;
-    height: 1.4in;
-    margin: 0.08in 0;
+    width: 1.12in;
+    height: 1.12in;
+    margin: 0.06in 0;
   }
 
   .box-net .qr-url {
     font-family: "JetBrains Mono", monospace;
-    font-size: 6.5pt;
+    font-size: 5.2pt;
     color: #333;
     text-align: center;
   }
 
-  /* layout - cross-shaped cube net, shifted down 0.4in to leave room for the top-outer tab */
-  .box-net .top { left: 2.3in; top: 0.4in; }
-  .box-net .left { left: 0; top: 2.7in; }
-  .box-net .front { left: 2.3in; top: 2.7in; }
-  .box-net .right { left: 4.6in; top: 2.7in; }
-  .box-net .back { left: 6.9in; top: 2.7in; }
-  .box-net .bottom { left: 2.3in; top: 5in; }
+  /* layout - cross-shaped cube net, shifted down 0.32in to leave room for the top-outer tab */
+  .box-net .top { left: 1.84in; top: 0.32in; }
+  .box-net .left { left: 0; top: 2.16in; }
+  .box-net .front { left: 1.84in; top: 2.16in; }
+  .box-net .right { left: 3.68in; top: 2.16in; }
+  .box-net .back { left: 5.52in; top: 2.16in; }
+  .box-net .bottom { left: 1.84in; top: 4in; }
 
   /* fold lines - dashed instead of solid where an edge meets another face */
   .box-net .top { border-bottom-style: dashed; }
@@ -381,7 +398,7 @@ h1, h2, h3, .font-display {
     content: "glue";
     display: block;
     font-family: "JetBrains Mono", monospace;
-    font-size: 5.5pt;
+    font-size: 5pt;
     color: #666;
     text-align: center;
     writing-mode: vertical-rl;
@@ -389,51 +406,51 @@ h1, h2, h3, .font-display {
   }
 
   .box-net .tab-top-outer {
-    left: 2.3in;
+    left: 1.84in;
     top: 0;
-    width: 2.3in;
-    height: 0.4in;
+    width: 1.84in;
+    height: 0.32in;
   }
 
   .box-net .tab-top-left {
-    left: 1.9in;
-    top: 0.4in;
-    width: 0.4in;
-    height: 2.3in;
+    left: 1.52in;
+    top: 0.32in;
+    width: 0.32in;
+    height: 1.84in;
   }
 
   .box-net .tab-top-right {
-    left: 4.6in;
-    top: 0.4in;
-    width: 0.4in;
-    height: 2.3in;
+    left: 3.68in;
+    top: 0.32in;
+    width: 0.32in;
+    height: 1.84in;
   }
 
   .box-net .tab-back-right {
-    left: 9.2in;
-    top: 2.7in;
-    width: 0.4in;
-    height: 2.3in;
+    left: 7.36in;
+    top: 2.16in;
+    width: 0.32in;
+    height: 1.84in;
   }
 
   .box-net .tab-bottom-left {
-    left: 1.9in;
-    top: 5in;
-    width: 0.4in;
-    height: 2.3in;
+    left: 1.52in;
+    top: 4in;
+    width: 0.32in;
+    height: 1.84in;
   }
 
   .box-net .tab-bottom-right {
-    left: 4.6in;
-    top: 5in;
-    width: 0.4in;
-    height: 2.3in;
+    left: 3.68in;
+    top: 4in;
+    width: 0.32in;
+    height: 1.84in;
   }
 
   .box-net .tab-bottom-outer {
-    left: 2.3in;
-    top: 7.3in;
-    width: 2.3in;
-    height: 0.4in;
+    left: 1.84in;
+    top: 5.84in;
+    width: 1.84in;
+    height: 0.32in;
   }
 }
