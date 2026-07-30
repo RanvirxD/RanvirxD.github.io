@@ -6,6 +6,7 @@ import { LineMask, FadeUp, ChapterHead, easeOutExpo } from '@/components/motion/
 import { profile, experience, projects /* , blogPosts */ } from '@/data/portfolio';
 // import BlogList from '@/components/blog/BlogList';
 import StackBadges from '@/components/projects/StackBadges';
+import LatestGitHubCommit from '@/components/github/LatestGitHubCommit';
 
 const socials = [
   {
@@ -60,12 +61,12 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: easeOutExpo, delay: 0.2 }}
-              className="shrink-0 w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border border-border bg-muted"
+              className="shrink-0 w-40 h-48 sm:w-44 sm:h-52 md:w-52 md:h-64 rounded-lg overflow-hidden border border-border bg-muted"
             >
               <img
                 src={profile.avatar}
                 alt={profile.name}
-                className="w-full h-full object-cover object-[center_15%] scale-110"
+                className="w-full h-full object-cover object-[center_12%]"
               />
             </motion.div>
 
@@ -105,6 +106,8 @@ export default function Home() {
           >
             {profile.tagline}
           </motion.p>
+
+          <LatestGitHubCommit />
         </motion.div>
 
         <motion.div

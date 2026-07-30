@@ -2,8 +2,7 @@
 export const profile = {
   name: "Ranvir Singh",
   role: "Computer Science Engineer",
-  tagline:
-    "Full-stack engineer shipping production systems — real-time platforms, ML pipelines, and infrastructure that holds up under load. Open to opportunities where I can build and grow.",
+  tagline: "I build full-stack systems that ship — real-time platforms, ML pipelines, and production infrastructure.",
   location: "Gurugram, India",
   email: "ranvirsingh.15h@gmail.com",
   phone: "+91 8320263271",
@@ -51,7 +50,7 @@ export const projects = [
     name: "DSA — Versus",
     subtitle: "Real-Time Competitive Coding Battle Platform",
     context: "In Progress · Personal Project",
-    stack: ["Next.js", "React", "Tailwind CSS", "Supabase", "Docker", "Vercel"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Docker", "Vercel", "GitHub"],
     points: [
       "Building a full-stack platform where users compete head-to-head solving DSA problems with a shared live timer and rankings, using Next.js (App Router), React, Tailwind CSS, and Monaco Editor.",
       "Using Supabase (PostgreSQL), authentication (email and GitHub OAuth), and Realtime subscriptions to sync battle state and timers live across all connected clients.",
@@ -64,7 +63,7 @@ export const projects = [
     name: "MedFlow",
     subtitle: "Hospital Management & Referral System",
     context: "State-Level Hackathon — Finalist",
-    stack: ["MongoDB", "Node.js", "Express.js", "Geospatial"],
+    stack: ["MongoDB", "Node.js", "Express.js", "React", "Tailwind CSS"],
     points: [
       "Architected a referral and patient management system with role-based auth, enabling real-time hospital coordination with controlled state transitions (pending → accepted/rejected/completed).",
       "Engineered location-aware hospital discovery and resource tracking using MongoDB geospatial indexing, enabling real-time visibility into bed, ICU, staff, and equipment capacity.",
@@ -76,7 +75,7 @@ export const projects = [
     name: "Redditor",
     subtitle: "Multi-Language Code Translation Platform",
     context: "Personal Project · Live at redditorcode.vercel.app",
-    stack: ["Python", "Java", "Next.js", "LLM Integration"],
+    stack: ["Python", "Java", "Next.js", "TypeScript", "LLM Integration"],
     points: [
       "Engineered a real-time code translation system supporting 19+ languages using an AST-based parser fused with LLM inference pipelines, achieving sub-second conversion (Java → Python/C++).",
     ],
@@ -87,7 +86,7 @@ export const projects = [
     name: "MINDSPACE",
     subtitle: "AI-Based Internship Recommendation Engine",
     context: "Smart India Hackathon — Team Project",
-    stack: ["React", "Flask", "PostgreSQL", "Redis"],
+    stack: ["React", "Flask", "Python", "PostgreSQL", "Redis", "TypeScript"],
     points: [
       "Architected a hybrid recommendation engine combining LLM-powered semantic reasoning with deterministic rule-based fallback, returning 3–5 ranked internship matches per query while preserving explainability and reliability under sparse-data conditions.",
       "Co-designed a mobile-first system stack (React PWA, Flask REST APIs, PostgreSQL, Redis) with offline caching support, enabling low-latency access and horizontal scalability for concurrent users on low-bandwidth networks.",

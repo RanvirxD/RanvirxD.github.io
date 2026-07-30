@@ -1,36 +1,51 @@
-const STACK_SLUG = {
-  'React PWA': 'react',
-  React: 'react',
-  'Next.js': 'nextdotjs',
-  'Tailwind CSS': 'tailwindcss',
-  Supabase: 'supabase',
-  Docker: 'docker',
-  Vercel: 'vercel',
-  Cloudflare: 'cloudflare',
-  Flask: 'flask',
-  PostgreSQL: 'postgresql',
-  Redis: 'redis',
-  MongoDB: 'mongodb',
-  'Node.js': 'nodedotjs',
-  'Express.js': 'express',
-  Python: 'python',
-  Java: 'java',
-  'Ruby on Rails': 'rubyonrails',
-  AWS: 'amazonwebservices',
-  MySQL: 'mysql',
-  Git: 'git',
-  GitHub: 'github',
-  Linux: 'linux',
-  'IBM Cloud': 'ibm',
-  TypeScript: 'typescript',
-  JavaScript: 'javascript',
-  PHP: 'php',
-  Kotlin: 'kotlin',
-  Ruby: 'ruby',
-  Redux: 'redux',
-  'LLM Integration': 'openai',
-  Geospatial: 'mongodb',
+import { useEffect, useState } from 'react';
+import { useTheme } from '@/components/theme/ThemeProvider';
+
+/** simple = Simple Icons CDN (monochrome); devicon = Devicon SVG */
+const STACK_ICON = {
+  React: { type: 'simple', slug: 'react' },
+  'React PWA': { type: 'simple', slug: 'react' },
+  'Next.js': { type: 'simple', slug: 'nextdotjs' },
+  'Tailwind CSS': { type: 'simple', slug: 'tailwindcss' },
+  TypeScript: { type: 'simple', slug: 'typescript' },
+  JavaScript: { type: 'simple', slug: 'javascript' },
+  Python: { type: 'simple', slug: 'python' },
+  Java: { type: 'devicon', slug: 'java/java-plain' },
+  'C++': { type: 'simple', slug: 'cplusplus' },
+  Kotlin: { type: 'simple', slug: 'kotlin' },
+  PHP: { type: 'simple', slug: 'php' },
+  Ruby: { type: 'simple', slug: 'ruby' },
+  Supabase: { type: 'simple', slug: 'supabase' },
+  Docker: { type: 'simple', slug: 'docker' },
+  Vercel: { type: 'simple', slug: 'vercel' },
+  Cloudflare: { type: 'simple', slug: 'cloudflare' },
+  Flask: { type: 'simple', slug: 'flask' },
+  PostgreSQL: { type: 'simple', slug: 'postgresql' },
+  Redis: { type: 'simple', slug: 'redis' },
+  MongoDB: { type: 'simple', slug: 'mongodb' },
+  'Node.js': { type: 'simple', slug: 'nodedotjs' },
+  'Express.js': { type: 'simple', slug: 'express' },
+  'Ruby on Rails': { type: 'simple', slug: 'rubyonrails' },
+  AWS: { type: 'devicon', slug: 'amazonwebservices/amazonwebservices-plain-wordmark' },
+  MySQL: { type: 'simple', slug: 'mysql' },
+  Git: { type: 'simple', slug: 'git' },
+  GitHub: { type: 'simple', slug: 'github' },
+  Linux: { type: 'simple', slug: 'linux' },
+  Redux: { type: 'simple', slug: 'redux' },
+  Geospatial: { type: 'simple', slug: 'mongodb' },
+  'LLM Integration': { type: 'simple', slug: 'huggingface' },
+  OpenAI: { type: 'simple', slug: 'huggingface' },
 };
+
+function iconUrl(name, theme) {
+  const entry = STACK_ICON[name];
+  if (!entry) return null;
+  if (entry.type === 'simple') {
+    const color = theme === 'dark' ? 'E8E8E8' : '1A1A1A';
+    return `https://cdn.simpleicons.org/${entry.slug}/${color}`;
+  }
+  return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${entry.slug}.svg`;
+}
 
 function FallbackGlyph({ name }) {
   const letter = name.replace(/[^a-zA-Z0-9]/g, '').charAt(0) || '?';
@@ -45,18 +60,31 @@ function FallbackGlyph({ name }) {
 }
 
 function StackIcon({ name }) {
-  const slug = STACK_SLUG[name];
-  if (slug) {
-    return (
-      <img
-        src={`https://cdn.simpleicons.org/${slug}`}
-        alt=""
-        className="w-full h-full object-contain dark:brightness-110"
-        loading="lazy"
-      />
-    );
+  const { theme } = useTheme();
+  const [failed, setFailed] = useState(false);
+  const entry = STACK_ICON[name];
+  const url = iconUrl(name, theme);
+
+  useEffect(() => {
+    setFailed(false);
+  }, [theme, name]);
+
+  if (!entry || failed || !url) {
+    return <FallbackGlyph name={name} />;
   }
-  return <FallbackGlyph name={name} />;
+
+  const isDevicon = entry.type === 'devicon';
+
+  return (
+    <img
+      key={`${name}-${theme}`}
+      src={url}
+      alt=""
+      onError={() => setFailed(true)}
+      className={`w-full h-full object-contain ${isDevicon ? 'dark:invert dark:brightness-200' : ''}`}
+      loading="lazy"
+    />
+  );
 }
 
 export default function StackBadges({ items, className = '' }) {

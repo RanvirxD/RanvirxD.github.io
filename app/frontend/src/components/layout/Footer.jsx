@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { profile } from "@/data/portfolio";
-import { motion } from "framer-motion";
 
 const primary = ["Home", "Work", "Projects", "Blog", "Resume"];
 const extended = ["Papershelf", "Bookshelf"];
@@ -52,30 +51,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Slow editorial marquee */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="mt-24 overflow-hidden -mx-6 md:-mx-10"
-        >
-          <div className="marquee-track flex whitespace-nowrap gap-16 pr-16 select-none">
-            {Array.from({ length: 2 }).map((_, k) => (
-              <div key={k} className="flex gap-16 pr-16 shrink-0">
-                {["DSA", "Competitive Programming", "System Design", "Full‑Stack", "Linux", "Distributed Systems", "AI/ML", "Open Source"].map((s, i) => (
-                  <span key={i} className="font-serif text-[18vw] md:text-[10vw] leading-none outline-text">
-                    {s} •
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <div className="mt-24 overflow-hidden -mx-6 md:-mx-10">
+          <p className="font-serif text-[18vw] md:text-[8.7vw] leading-none outline-text text-center">
+            no-fluff engineering;
+          </p>
+        </div>
 
         <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-3 font-mono text-[11px] text-muted-foreground">
-          <span>© {new Date().getFullYear()} Ranvir Singh. Set in Instrument Serif & Manrope.</span>
-          <span>v1.0 · Editorial Engineer edition</span>
+          <span>© 2026 Ranvir Singh. All rights reserved.</span>
         </div>
       </div>
     </footer>
