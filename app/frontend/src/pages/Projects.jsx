@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeUp, ChapterHead } from "@/components/motion/Reveal";
 import { projects } from "@/data/portfolio";
+import StackBadges from "@/components/projects/StackBadges";
 
 export default function Projects() {
   return (
@@ -30,11 +31,7 @@ function Detailed({ project, index }) {
           <p className="mono-label">{`0${index + 1} · ${project.context}`}</p>
           <h2 className="mt-4 font-serif text-5xl md:text-6xl leading-[0.95] tracking-tight">{project.name}</h2>
           <p className="mt-4 text-xl text-muted-foreground max-w-md">{project.subtitle}</p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {project.stack.map((s) => (
-              <span key={s} className="font-mono text-[11px] uppercase tracking-[0.18em] px-2.5 py-1 rounded-full border border-border">{s}</span>
-            ))}
-          </div>
+          <StackBadges items={project.stack} className="mt-6" />
         </div>
         <div className="md:col-span-7 space-y-8">
           <FadeUp>

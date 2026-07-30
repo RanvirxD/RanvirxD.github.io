@@ -9,7 +9,6 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/work", label: "Work" },
   { to: "/projects", label: "Projects" },
-  { to: "/blog", label: "Blog" },
   { to: "/resume", label: "Resume" },
 ];
 
@@ -27,9 +26,11 @@ export default function Header() {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setSearchOpen((s) => !s);
-      }      if (e.key === "Escape") {
+      }
+      if (e.key === "Escape") {
         setSearchOpen(false);
-      }    };
+      }
+    };
     window.addEventListener("keydown", onKey);
     return () => {
       window.removeEventListener("scroll", onScroll);

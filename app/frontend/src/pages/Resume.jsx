@@ -1,4 +1,4 @@
-﻿import { Download, ExternalLink, Mail } from 'lucide-react';
+﻿import { Download, Mail, Printer } from 'lucide-react';
 import { FadeUp, ChapterHead } from '@/components/motion/Reveal';
 import { profile, experience, projects, skills, education, certifications } from '@/data/portfolio';
 
@@ -23,15 +23,14 @@ export default function Resume() {
               <Download className="w-4 h-4" />
               <span>~/ downloads/ranvir-resume.pdf</span>
             </a>
-            <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-5 h-11 border border-border hover:bg-foreground/[0.04] transition-colors"
-              data-testid="open-resume-btn"
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="inline-flex items-center gap-2 rounded-md px-5 h-11 border border-border hover:bg-foreground/[0.04] transition-colors font-mono text-sm"
+              data-testid="print-resume-btn"
             >
-              <ExternalLink className="w-4 h-4" /> Open PDF
-            </a>
+              <Printer className="w-4 h-4" /> Print
+            </button>
             <a
               href={`mailto:${profile.email}`}
               className="inline-flex items-center gap-2 rounded-full px-5 h-11 border border-border hover:bg-foreground/[0.04] transition-colors"

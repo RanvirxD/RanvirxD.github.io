@@ -38,10 +38,12 @@ function SmoothScroll({ children }) {
   return children;
 }
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
+
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <SmoothScroll>
           <Routes>
             <Route element={<Layout />}>

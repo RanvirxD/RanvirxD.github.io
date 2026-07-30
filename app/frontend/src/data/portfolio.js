@@ -8,6 +8,7 @@ export const profile = {
   phone: "+91 8320263271",
   linkedin: "https://linkedin.com/in/rait-ranvir-singh",
   github: "https://github.com/RanvirxD",
+  avatar: `${import.meta.env.BASE_URL}assets/avatar.png`,
   aboutHeadline: "Currently freelancing, and looking to contribute.",
   aboutBody:
     "I'm a computer science engineer in my final year. Right now I take on freelance work, contribute to open-source when a problem holds my attention, and spend the rest of the hours grinding DSA and competitive programming. I care about calm interfaces, honest systems and code that ages well.",
