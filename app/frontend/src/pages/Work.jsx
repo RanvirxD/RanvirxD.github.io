@@ -48,7 +48,7 @@ export default function Work() {
                   <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">{ed.period}</p>
                   <h3 className="mt-2 font-serif text-3xl leading-tight">{ed.school}</h3>
                   <p className="mt-1 text-muted-foreground">{ed.degree} &middot; {ed.place}</p>
-                  <p className="mt-2 font-mono text-sm">{ed.score}</p>
+                  {ed.score ? <p className="mt-2 font-mono text-sm">{ed.score}</p> : null}
                 </div>
               </FadeUp>
             ))}

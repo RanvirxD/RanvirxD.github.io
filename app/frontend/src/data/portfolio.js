@@ -2,14 +2,15 @@
 export const profile = {
   name: "Ranvir Singh",
   role: "Computer Science Engineer",
-  tagline: "Full‑stack, systems & AI — building the quiet parts of loud products.",
+  tagline:
+    "Full-stack engineer shipping production systems — real-time platforms, ML pipelines, and infrastructure that holds up under load. Open to opportunities where I can build and grow.",
   location: "Gurugram, India",
   email: "ranvirsingh.15h@gmail.com",
   phone: "+91 8320263271",
   linkedin: "https://linkedin.com/in/rait-ranvir-singh",
   github: "https://github.com/RanvirxD",
   avatar: `${import.meta.env.BASE_URL}assets/avatar.png`,
-  aboutHeadline: "Currently freelancing, and looking to contribute.",
+  aboutHeadline: "Final-year CS student building systems that ship. Open to internships and full-time roles.",
   aboutBody:
     "I'm a computer science engineer in my final year. Right now I take on freelance work, contribute to open-source when a problem holds my attention, and spend the rest of the hours grinding DSA and competitive programming. I care about calm interfaces, honest systems and code that ages well.",
 };
@@ -46,47 +47,84 @@ export const experience = [
 
 export const projects = [
   {
-    slug: "mindspace",
-    name: "MINDSPACE",
-    subtitle: "AI‑Based Internship Recommendation Engine",
-    context: "Smart India Hackathon — Team Project",
-    stack: ["React PWA", "Flask", "PostgreSQL", "Redis", "LLM"],
+    slug: "dsa-versus",
+    name: "DSA — Versus",
+    subtitle: "Real-Time Competitive Coding Battle Platform",
+    context: "In Progress · Personal Project",
+    stack: ["Next.js", "React", "Tailwind CSS", "Supabase", "Docker", "Vercel"],
     points: [
-      "Architected a hybrid recommendation engine combining LLM-powered semantic reasoning with deterministic rule-based fallback, returning 3–5 ranked internship matches per query while preserving explainability and reliability under sparse-data conditions.",
-      "Co-designed a mobile-first system stack (React PWA, Flask REST APIs, PostgreSQL, Redis) with offline caching support, enabling low-latency access and horizontal scalability for concurrent users on low-bandwidth networks.",
+      "Building a full-stack platform where users compete head-to-head solving DSA problems with a shared live timer and rankings, using Next.js (App Router), React, Tailwind CSS, and Monaco Editor.",
+      "Using Supabase (PostgreSQL), authentication (email and GitHub OAuth), and Realtime subscriptions to sync battle state and timers live across all connected clients.",
+      "Integrating a self-hosted Judge0 CE engine via Docker and Cloudflare Tunnel for sandboxed execution, deployed on Vercel with server-side API routes and Server Actions.",
     ],
-    image: "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80",
   },
   {
     slug: "medflow",
     name: "MedFlow",
-    subtitle: "Distributed Hospital Management & Inter‑Hospital Referral System",
-    context: "State Level Hackathon — Finalist · Full Stack Contributor",
-    stack: ["MongoDB", "Geospatial", "RBAC", "Realtime"],
+    subtitle: "Hospital Management & Referral System",
+    context: "State-Level Hackathon — Finalist",
+    stack: ["MongoDB", "Node.js", "Express.js", "Geospatial"],
     points: [
-      "Architected a state-driven referral and patient management system with role-based authentication, enabling real-time coordination across multiple hospitals with controlled state transitions (pending → accepted/rejected/completed).",
-      "Engineered location-aware hospital discovery and resource tracking using MongoDB geospatial indexing and optimized data models — real-time visibility of beds, ICU capacity, staff, and equipment.",
+      "Architected a referral and patient management system with role-based auth, enabling real-time hospital coordination with controlled state transitions (pending → accepted/rejected/completed).",
+      "Engineered location-aware hospital discovery and resource tracking using MongoDB geospatial indexing, enabling real-time visibility into bed, ICU, staff, and equipment capacity.",
     ],
     image: "https://images.pexels.com/photos/5366225/pexels-photo-5366225.jpeg?auto=compress&w=1600",
   },
   {
     slug: "redditor",
     name: "Redditor",
-    subtitle: "AI‑Powered Multi‑Language Code Translation & Execution Platform",
-    context: "Personal Project — Live in production",
-    stack: ["AST parser", "LLM inference", "19+ languages"],
+    subtitle: "Multi-Language Code Translation Platform",
+    context: "Personal Project · Live at redditorcode.vercel.app",
+    stack: ["Python", "Java", "Next.js", "LLM Integration"],
     points: [
-      "Engineered a real-time code translation system supporting 19+ languages using a custom AST-based parser fused with LLM inference pipelines, achieving sub-second cross-language conversion (Java → Python/C++) with optimized cost-performance tradeoffs.",
+      "Engineered a real-time code translation system supporting 19+ languages using an AST-based parser fused with LLM inference pipelines, achieving sub-second conversion (Java → Python/C++).",
     ],
     image: "https://images.unsplash.com/photo-1633098096956-afdc8bcc8552?w=1600&q=80",
+  },
+  {
+    slug: "mindspace",
+    name: "MINDSPACE",
+    subtitle: "AI-Based Internship Recommendation Engine",
+    context: "Smart India Hackathon — Team Project",
+    stack: ["React", "Flask", "PostgreSQL", "Redis"],
+    points: [
+      "Architected a hybrid recommendation engine combining LLM-powered semantic reasoning with deterministic rule-based fallback, returning 3–5 ranked internship matches per query while preserving explainability and reliability under sparse-data conditions.",
+      "Co-designed a mobile-first system stack (React PWA, Flask REST APIs, PostgreSQL, Redis) with offline caching support, enabling low-latency access and horizontal scalability for concurrent users on low-bandwidth networks.",
+    ],
+    image: "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?w=1600&q=80",
   },
 ];
 
 export const skills = {
-  Languages: ["C++", "Python", "JavaScript", "TypeScript", "SQL", "Kotlin"],
-  "Backend & Systems": ["Node.js", "Express", "REST APIs", "JWT", "System Design", "DSA"],
-  "Cloud & Tools": ["AWS", "Docker", "Linux", "Git", "MongoDB", "SQL"],
-  Spoken: ["English", "Hindi", "Punjabi", "Gujarati"],
+  Languages: ["JavaScript", "TypeScript", "Python", "Java", "C++", "Kotlin", "PHP", "Ruby", "SQL"],
+  Frameworks: ["React", "Next.js", "Redux", "Node.js", "Express.js", "Ruby on Rails", "Tailwind CSS"],
+  "Developer Tools": [
+    "AWS",
+    "Docker",
+    "MongoDB",
+    "PostgreSQL",
+    "MySQL",
+    "Redis",
+    "Supabase",
+    "Vercel",
+    "Cloudflare",
+    "Git",
+    "GitHub",
+    "Linux",
+    "IBM Cloud",
+  ],
+  "Libraries & Concepts": [
+    "REST APIs",
+    "JWT",
+    "OAuth",
+    "WebSockets",
+    "System Design",
+    "Data Structures & Algorithms",
+    "LLM Integration",
+    "Prompt Engineering",
+    "AST-Based Parsing",
+  ],
 };
 
 export const education = [
@@ -100,14 +138,14 @@ export const education = [
   {
     school: "Parul University",
     place: "Vadodara, Gujarat",
-    degree: "B.Tech — Computer Science",
+    degree: "Diploma — Information Technology",
     period: "Jun 2021 — Jun 2024",
-    score: "CGPA 7.68",
+    score: "",
   },
 ];
 
 export const certifications = [
-  { title: "Oracle Infrastructure and AI Foundations Associates", issuer: "Oracle Cloud", date: "Oct 2025" },
+  { title: "Oracle Infrastructure and AI Foundations Associate", issuer: "Oracle Cloud", date: "Oct 2025" },
   { title: "Community Admin Peer Mentorship — Cloud Computing", issuer: "SGT University", date: "Jul 2025 — Present" },
   { title: "Training and Placement Coordinator", issuer: "Parul University", date: "Aug 2022 — Jun 2024" },
 ];

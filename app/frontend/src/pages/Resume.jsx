@@ -106,7 +106,7 @@ export default function Resume() {
                     <div className="md:col-span-9">
                       <p className="font-serif text-xl leading-tight">{ed.school}</p>
                       <p className="text-sm text-muted-foreground">{ed.degree} · {ed.place}</p>
-                      <p className="font-mono text-xs mt-1">{ed.score}</p>
+                      {ed.score ? <p className="font-mono text-xs mt-1">{ed.score}</p> : null}
                     </div>
                   </div>
                 ))}

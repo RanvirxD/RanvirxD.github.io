@@ -3,8 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowUpRight, ArrowDown } from 'lucide-react';
 import { LineMask, FadeUp, ChapterHead, easeOutExpo } from '@/components/motion/Reveal';
-import { profile, experience, projects, blogPosts } from '@/data/portfolio';
-import BlogList from '@/components/blog/BlogList';
+import { profile, experience, projects /* , blogPosts */ } from '@/data/portfolio';
+// import BlogList from '@/components/blog/BlogList';
 import StackBadges from '@/components/projects/StackBadges';
 
 const socials = [
@@ -60,12 +60,12 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: easeOutExpo, delay: 0.2 }}
-              className="shrink-0"
+              className="shrink-0 w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border border-border bg-muted"
             >
               <img
                 src={profile.avatar}
                 alt={profile.name}
-                className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover border border-border bg-muted [image-rendering:pixelated]"
+                className="w-full h-full object-cover object-[center_15%] scale-110"
               />
             </motion.div>
 
@@ -188,6 +188,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Blog section — uncomment to show on home page
       <section id="blog" className="home-section border-t border-border">
         <div className="content-column">
           <FadeUp><ChapterHead number="04" kicker="Blog" title="Field notes." /></FadeUp>
@@ -201,10 +202,11 @@ export default function Home() {
           </FadeUp>
         </div>
       </section>
+      */}
 
       <section id="contact" className="home-section border-t border-border">
         <div className="content-column">
-          <FadeUp><ChapterHead number="05" kicker="Say hi" title="Let's build a small, honest thing." /></FadeUp>
+          <FadeUp><ChapterHead number="04" kicker="Say hi" title="Let's build a small, honest thing." /></FadeUp>
           <FadeUp delay={0.15}>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
               Freelance slots open. Open-source contributions welcome. The best way to reach me is a plain email.
