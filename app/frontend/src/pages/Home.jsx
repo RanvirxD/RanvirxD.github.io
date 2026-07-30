@@ -147,7 +147,7 @@ export default function Home() {
 
       <section id="work" className="home-section border-t border-border">
         <div className="content-column">
-          <FadeUp><ChapterHead number="02" kicker="Work" title="Three seasons, three environments." /></FadeUp>
+          <FadeUp><ChapterHead number="02" kicker="Work" title="Work Experience." /></FadeUp>
           <div className="mt-12 divide-y divide-border">
             {experience.map((e, i) => (
               <FadeUp key={e.company} delay={i * 0.08}>
