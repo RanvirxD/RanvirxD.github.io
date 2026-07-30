@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-24 overflow-hidden -mx-6 md:-mx-10">
+        <div className="mt-10 overflow-visible -mx-6 md:-mx-10">
           <p className="font-serif text-[18vw] md:text-[8.7vw] leading-none outline-text text-center">
             no-fluff engineering;
           </p>

@@ -2,7 +2,7 @@
 export const profile = {
   name: "Ranvir Singh",
   role: "Computer Science Engineer",
-  tagline: "I build full-stack systems that ship — real-time platforms, ML pipelines, and production infrastructure.",
+  tagline: "I build full-stack systems Cloud Platforms, ML pipelines, and production infrastructure.",
   location: "Gurugram, India",
   email: "ranvirsingh.15h@gmail.com",
   phone: "+91 8320263271",

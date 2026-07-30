@@ -11,7 +11,7 @@ import LatestGitHubCommit from '@/components/github/LatestGitHubCommit';
 const socials = [
   {
     label: 'Twitter',
-    url: 'https://x.com/ranvir_singh_15',
+    url: 'https://x.com/RanvirxD',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>,
   },
   {
@@ -26,12 +26,12 @@ const socials = [
   },
   {
     label: 'YouTube',
-    url: 'https://youtube.com/@ranvir_singh',
+    url: 'https://www.youtube.com/@Burnet-Builds',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" /></svg>,
   },
   {
     label: 'Instagram',
-    url: 'https://instagram.com/ranvir._.singh',
+    url: 'https://www.instagram.com/burnetolo/',
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>,
   },
   {
@@ -138,7 +138,7 @@ export default function Home() {
           </FadeUp>
           <FadeUp delay={0.35}>
             <div className="mt-8 flex flex-wrap gap-2">
-              {['Freelance', 'DSA', 'Competitive Programming', 'Open Source'].map((t) => (
+              {['Freelance', 'DSA', 'Cloud & Devops', 'Full Stack'].map((t) => (
                 <span key={t} className="mono-label px-3 py-1.5 border border-border">
                   {t}
                 </span>
@@ -157,7 +157,7 @@ export default function Home() {
                 <div className="flow-row grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 py-6 md:py-8">
                   <div className="md:col-span-2 font-mono text-sm text-muted-foreground pt-2">{e.period}</div>
                   <div className="md:col-span-4">
-                    <h3 className="font-serif text-4xl md:text-5xl leading-none">{e.company}</h3>
+                  <h3 className="font-serif text-3xl md:text-4xl leading-[1.1]">  {e.company}</h3>
                     <p className="mt-2 text-base text-muted-foreground">{e.role} · {e.location}</p>
                   </div>
                   <p className="md:col-span-6 text-base text-muted-foreground leading-relaxed">{e.points[0]}</p>
