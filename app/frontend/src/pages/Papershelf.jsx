@@ -8,7 +8,7 @@ export default function Papershelf() {
         <FadeUp><ChapterHead number="—" kicker="Papershelf" title="Papers I've read." /></FadeUp>
         <FadeUp delay={0.1}>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-            Just a log. Title, author, the date I closed the tab and felt smarter.
+            Just a log. Title, author, the date I closed the tab with some information.
           </p>
         </FadeUp>
 

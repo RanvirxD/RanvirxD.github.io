@@ -2,7 +2,7 @@
 import { FadeUp, ChapterHead } from '@/components/motion/Reveal';
 import { profile, experience, projects, skills, education, certifications } from '@/data/portfolio';
 
-const RESUME_URL = '/assets/ranvir-resume.pdf';
+const RESUME_URL = '/assets/ranvir-s-resume.pdf';
 
 export default function Resume() {
   return (
@@ -10,6 +10,9 @@ export default function Resume() {
       <div className="max-w-[1100px] mx-auto px-6 md:px-10">
         <FadeUp>
           <ChapterHead number="—" kicker="Resume" title="One page, plain and true." />
+          <p className="mt-8 max-w-xl text-lg text-muted-foreground">
+          hit “print as a box” and use your browser's print dialog (Ctrl/Cmd + P) — the printout folds into an actual box.
+          </p>
         </FadeUp>
 
         <FadeUp delay={0.1}>
@@ -21,7 +24,7 @@ export default function Resume() {
               data-testid="download-resume-btn"
             >
               <Download className="w-4 h-4" />
-              <span>~/ downloads/ranvir-resume.pdf</span>
+              <span>~/ downloads/ranvir-s-resume.pdf</span>
             </a>
             <button
               type="button"
@@ -29,7 +32,7 @@ export default function Resume() {
               className="inline-flex items-center gap-2 rounded-md px-5 h-11 border border-border hover:bg-foreground/[0.04] transition-colors font-mono text-sm"
               data-testid="print-resume-btn"
             >
-              <Printer className="w-4 h-4" /> Print
+              <Printer className="w-4 h-4" /> Print as a box
             </button>
             <a
               href={`mailto:${profile.email}`}

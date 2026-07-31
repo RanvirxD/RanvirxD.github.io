@@ -5,10 +5,10 @@ export default function Bookshelf() {
   return (
     <div className="pt-32 pb-32" data-testid="bookshelf-page">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <FadeUp><ChapterHead number="—" kicker="Bookshelf" title="Books that stayed with me." /></FadeUp>
+        <FadeUp><ChapterHead number="—" kicker="Bookshelf" title="Books that have influenced my thinking and growth" /></FadeUp>
         <FadeUp delay={0.1}>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-            Sorted by the shape of the problem each one solves. Reread more than read.
+          Sorted by the shape of the problem each one solves.
           </p>
         </FadeUp>
       </div>

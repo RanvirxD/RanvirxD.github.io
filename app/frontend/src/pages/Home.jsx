@@ -125,7 +125,7 @@ export default function Home() {
 
       <section id="about" className="home-section border-t border-border">
         <div className="content-column">
-          <FadeUp><ChapterHead number="01" kicker="About" title="A quiet study of loud systems." /></FadeUp>
+          <FadeUp><ChapterHead number="01" kicker="About" title="" /></FadeUp>
           <FadeUp delay={0.15}>
             <p className="mt-8 font-serif text-3xl md:text-5xl leading-[1.2]">
               {profile.aboutHeadline}
