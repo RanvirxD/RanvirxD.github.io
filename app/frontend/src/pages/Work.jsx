@@ -40,7 +40,7 @@ export default function Work() {
 
         {/* Education */}
         <section className="mt-32">
-          <FadeUp><ChapterHead number="03" kicker="School" title="Two campuses, one thread." /></FadeUp>
+          <FadeUp><ChapterHead number="03" kicker="School" title="Education" /></FadeUp>
           <div className="mt-14 divide-y divide-border">
             {education.map((ed) => (
               <FadeUp key={ed.school}>
