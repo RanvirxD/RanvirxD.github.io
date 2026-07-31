@@ -164,3 +164,178 @@
   }
 }
 
+/* Resume print-as-box — hidden on screen, cube net on print */
+.print-only {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: letter landscape;
+    margin: 0.25in;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+
+  header,
+  footer,
+  .pointer-events-none.fixed {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .box-net {
+    position: relative;
+    width: 7.68in;
+    height: 6.16in;
+    margin: 0 auto;
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: #000;
+  }
+
+  .box-net .face {
+    position: absolute;
+    width: 1.84in;
+    height: 1.84in;
+    border: 1px solid #000;
+    padding: 0.14in;
+    font-size: 6.1pt;
+    line-height: 1.4;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .box-net .face p {
+    margin: 0 0 0.05in 0;
+  }
+
+  .box-net .face-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 5.6pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000;
+    border-bottom: 0.5pt solid #000;
+    padding-bottom: 0.04in;
+    margin-bottom: 0.08in !important;
+  }
+
+  .box-net .front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .box-net .front .big-name {
+    font-size: 10.4pt;
+    font-weight: 700;
+    margin-bottom: 0.05in !important;
+  }
+
+  .box-net .front .sub {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 6pt;
+    color: #333;
+  }
+
+  .box-net .front .contact {
+    font-size: 5.6pt;
+    color: #333;
+  }
+
+  .box-net .qr-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box-net .qr-img {
+    width: 1.12in;
+    height: 1.12in;
+    margin: 0.06in 0;
+  }
+
+  .box-net .qr-url {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 5.2pt;
+    color: #333;
+    text-align: center;
+  }
+
+  .box-net .top { left: 1.84in; top: 0.32in; }
+  .box-net .left { left: 0; top: 2.16in; }
+  .box-net .front { left: 1.84in; top: 2.16in; }
+  .box-net .right { left: 3.68in; top: 2.16in; }
+  .box-net .back { left: 5.52in; top: 2.16in; }
+  .box-net .bottom { left: 1.84in; top: 4in; }
+
+  .box-net .top { border-bottom-style: dashed; }
+  .box-net .left { border-right-style: dashed; }
+  .box-net .front { border-style: dashed; }
+  .box-net .right { border-left-style: dashed; border-right-style: dashed; }
+  .box-net .back { border-left-style: dashed; }
+  .box-net .bottom { border-top-style: dashed; }
+
+  .box-net .tab {
+    position: absolute;
+    border: 1px dashed #000;
+    background: repeating-linear-gradient(45deg, #fff, #fff 3px, #f2f2f2 3px, #f2f2f2 6px);
+  }
+
+  .box-net .tab::after {
+    content: "glue";
+    display: block;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 5pt;
+    color: #666;
+    text-align: center;
+    writing-mode: vertical-rl;
+    height: 100%;
+  }
+
+  .box-net .tab-top-outer {
+    left: 1.84in; top: 0;
+    width: 1.84in; height: 0.32in;
+  }
+
+  .box-net .tab-top-left {
+    left: 1.52in; top: 0.32in;
+    width: 0.32in; height: 1.84in;
+  }
+
+  .box-net .tab-top-right {
+    left: 3.68in; top: 0.32in;
+    width: 0.32in; height: 1.84in;
+  }
+
+  .box-net .tab-back-right {
+    left: 7.36in; top: 2.16in;
+    width: 0.32in; height: 1.84in;
+  }
+
+  .box-net .tab-bottom-left {
+    left: 1.52in; top: 4in;
+    width: 0.32in; height: 1.84in;
+  }
+
+  .box-net .tab-bottom-right {
+    left: 3.68in; top: 4in;
+    width: 0.32in; height: 1.84in;
+  }
+
+  .box-net .tab-bottom-outer {
+    left: 1.84in; top: 5.84in;
+    width: 1.84in; height: 0.32in;
+  }
+}
+

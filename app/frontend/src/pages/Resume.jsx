@@ -3,10 +3,17 @@ import { FadeUp, ChapterHead } from '@/components/motion/Reveal';
 import { profile, experience, projects, skills, education, certifications } from '@/data/portfolio';
 
 const RESUME_URL = '/assets/ranvir-s-resume.pdf';
+const QR_URL = `${import.meta.env.BASE_URL}assets/qr.svg`;
+const SITE_URL = 'RanvirxD.github.io';
+
+const skillsSummary = Object.entries(skills)
+  .map(([k, v]) => `${k}: ${v.slice(0, 4).join(', ')}`)
+  .join(' · ');
 
 export default function Resume() {
   return (
-    <div className="pt-32 pb-32" data-testid="resume-page">
+    <>
+    <div className="screen-only pt-32 pb-32" data-testid="resume-page">
       <div className="max-w-[1100px] mx-auto px-6 md:px-10">
         <FadeUp>
           <ChapterHead number="—" kicker="Resume" title="One page, plain and true." />
@@ -133,6 +140,60 @@ export default function Resume() {
         </FadeUp>
       </div>
     </div>
+
+    <div className="print-only box-net" aria-hidden>
+      <div className="face top">
+        <p className="face-label">skills</p>
+        <p>{skillsSummary}</p>
+      </div>
+
+      <div className="face left">
+        <p className="face-label">experience</p>
+        {experience.map((e) => (
+          <p key={e.company}><b>{e.company}</b> — {e.period.split('—')[0].trim()}</p>
+        ))}
+      </div>
+
+      <div className="face front">
+        <p className="big-name">{profile.name}</p>
+        <p className="sub">{profile.role}</p>
+        <p className="contact">{profile.email}</p>
+        <p className="contact">{profile.phone}</p>
+        <p className="contact">{profile.location}</p>
+      </div>
+
+      <div className="face right qr-face">
+        <p className="face-label">scan me</p>
+        <img src={QR_URL} alt="QR code" className="qr-img" />
+        <p className="qr-url">{SITE_URL}</p>
+      </div>
+
+      <div className="face back">
+        <p className="face-label">education</p>
+        {education.map((ed) => (
+          <p key={ed.school}>{ed.degree} — {ed.place}</p>
+        ))}
+        <p className="face-label" style={{ marginTop: '0.3in' }}>connect</p>
+        <p>github.com/RanvirxD</p>
+        <p>linkedin.com/in/rait-ranvir-singh</p>
+      </div>
+
+      <div className="face bottom">
+        <p className="face-label">certifications</p>
+        {certifications.map((c) => (
+          <p key={c.title}>{c.title}</p>
+        ))}
+      </div>
+
+      <div className="tab tab-top-outer" />
+      <div className="tab tab-top-left" />
+      <div className="tab tab-top-right" />
+      <div className="tab tab-back-right" />
+      <div className="tab tab-bottom-left" />
+      <div className="tab tab-bottom-right" />
+      <div className="tab tab-bottom-outer" />
+    </div>
+    </>
   );
 }
 
